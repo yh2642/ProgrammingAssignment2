@@ -24,9 +24,9 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 ## The second function is used for caching the inverse matrix if it had calculated before, or calculating it if the caching value is NULL.
-## The input of this funtion is the output of first function which is "set()", "get()", "setinv()", and "getinv()".
+## The input of this funtion is the output of first function.
 
-cacheSolve <- function(x, ...) {        
+cacheSolve <- function(x, ...) {             # the argument x should be the output of makeCacheMatrix
     in_m <- x$getinv()                       # get the value from the first function
     if(!is.null(in_m)) {         # if the in_m from cache is not NULL, return it.
         message("getting cached data")
